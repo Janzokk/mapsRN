@@ -61,23 +61,23 @@ export default function App() {
 			ref={mapRef}
 			//specify our coordinates.
 			initialRegion={moia}>
-			<Marker coordinate={m1}></Marker>
-			<Marker coordinate={m2}></Marker>
-			<Marker coordinate={m3}></Marker>
-			<Marker coordinate={m4}></Marker>
-			<Marker coordinate={m5}></Marker>
-			<Marker coordinate={m6}></Marker>
+			<Marker coordinate={m1} title={'Casa de Casanova'} description={'Casa de Casanova'}></Marker>
+			<Marker coordinate={m2} title='La volta, el pont' description='La volta, el pont'></Marker>
+			<Marker coordinate={m3} title='Capella de Sant Josep' description='Capella de Sant Josep'></Marker>
+			<Marker coordinate={m4} title='Mas de la Pineda' description='Mas de la Pineda'></Marker>
+			<Marker coordinate={m5} title='Monument de Sant Sebastia' description='Monument de Sant Sebastia'></Marker>
+			<Marker coordinate={m6} title='Mas de la Guantera' description='Mas de la Guantera'></Marker>
 		</MapView>
 		<View style={styles.btnContainer}>
 			<View style={styles.row}>
-				<TouchableOpacity style={styles.imageCont} onPress={() => goToMonument(m1)} ><Image></Image></TouchableOpacity>
-				<TouchableOpacity style={styles.imageCont} onPress={() => goToMonument(m2)} ></TouchableOpacity>
-				<TouchableOpacity style={styles.imageCont} onPress={() => goToMonument(m3)} ></TouchableOpacity>
+				<TouchableOpacity style={styles.imageCont} onPress={() => goToMonument(m1)} ><Image source={require('./assets/images/casanova.jpg')}></Image></TouchableOpacity>
+				<TouchableOpacity style={styles.imageCont} onPress={() => goToMonument(m2)} ><Image source={require('./assets/images/lavolta.jpg')}></Image></TouchableOpacity>
+				<TouchableOpacity style={styles.imageCont} onPress={() => goToMonument(m3)} ><Image source={require('./assets/images/santjosep.jpg')}></Image></TouchableOpacity>
 			</View>
 			<View style={styles.row}>
-				<TouchableOpacity style={styles.imageCont} onPress={() => goToMonument(m4)} ></TouchableOpacity>
-				<TouchableOpacity style={styles.imageCont} onPress={() => goToMonument(m5)} ></TouchableOpacity>
-				<TouchableOpacity style={styles.imageCont} onPress={() => goToMonument(m6)} ></TouchableOpacity>
+				<TouchableOpacity style={styles.imageCont} onPress={() => goToMonument(m4)} ><Image source={require('./assets/images/lapineda.jpg')}></Image></TouchableOpacity>
+				<TouchableOpacity style={styles.imageCont} onPress={() => goToMonument(m5)} ><Image source={require('./assets/images/santsebastia.jpg')}></Image></TouchableOpacity>
+				<TouchableOpacity style={styles.imageCont} onPress={() => goToMonument(m6)} ><Image source={require('./assets/images/guantera.jpg')}></Image></TouchableOpacity>
 			</View>
 		</View>
     </View>
@@ -113,7 +113,6 @@ const styles = StyleSheet.create({
   imageCont: {
 	width: '30%',
 	height: '80%',
-	backgroundColor: 'black',
   },
 });
 
