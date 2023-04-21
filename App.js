@@ -1,6 +1,6 @@
 import React from 'react';
 import MapView from 'react-native-maps';
-import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Image, Text } from 'react-native';
 import { Marker } from "react-native-maps";
 import { useRef } from "react";
 
@@ -53,10 +53,14 @@ export default function App() {
 	
 	function goToMonument(monument)
 	{
-		mapRef.current.animateToRegion(monument, 3*500);
+		mapRef.current.animateToRegion(monument, 3*250);
 	};
   return (
     <View style={styles.container}>
+		<View style={styles.title}>
+			<Text style={styles.titleText}>Moia Monumental</Text>
+		</View>
+		
       	<MapView style={styles.map} 
 			ref={mapRef}
 			//specify our coordinates.
@@ -87,6 +91,19 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  title:{
+	position: 'static',
+	width: "100%",
+	height: "10%",
+	backgroundColor: '#808080',
+	justifyContent: 'center',
+	opacity: 0.6,
+  },
+  titleText:{
+	marginTop: 30,
+	fontSize: 55,
+	color: 'white',
   },
   map: {
     width: '100%',
